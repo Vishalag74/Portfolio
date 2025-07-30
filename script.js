@@ -1,10 +1,7 @@
 // DOM Elements
-const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
 const themeToggle = document.getElementById('theme-toggle');
-const contactForm = document.getElementById('contact-form');
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {

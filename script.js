@@ -508,15 +508,15 @@ function initParticles() {
         return;
     }
 
-    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000 * 0.75); // 75% of previous number of particles
+    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000 * 0.5); // 50% of previous number of particles
 
     for (let i = 0; i < numberOfParticles; i++) {
         const size = Math.random() * 1.2 + 0.5; // Smaller sizes
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
-        const speedX = (Math.random() - 0.5) * (Math.random() * 3 + 1); // Much faster varied speeds
-        const speedY = (Math.random() - 0.5) * (Math.random() * 3 + 1);
-        const color = getParticleColor(theme, Math.random() * 0.5 + 0.3); // Varied opacity
+        const speedX = (Math.random() - 0.5) * (Math.random() * 20 + 1);//Speed of particles
+        const speedY = (Math.random() - 0.5) * (Math.random() * 5 + 1);
+        const color = getParticleColor(theme, Math.random() * 0.7 + 0.3); // Varied opacity
         particlesArray.push(new Particle(x, y, size, speedX, speedY, color));
     }
 }
@@ -524,8 +524,6 @@ function initParticles() {
 function getParticleColor(theme, opacity = 0.6) {
     if (theme === 'dark') {
         return `rgba(255, 255, 255, ${opacity})`; // Light particles for dark theme with varied opacity
-    } else {
-        return `rgba(96, 61, 244, ${opacity})`; // Purple-ish particles for light theme with varied opacity
     }
 }
 

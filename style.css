@@ -762,11 +762,64 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    align-items: center;
 }
 
 .skill-name {
     font-weight: 500;
     color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-name i {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.skill-name .fab.fa-html5 {
+    color: #E34F26;
+}
+
+.skill-name .fab.fa-css3-alt {
+    color: #1572B6;
+}
+
+.skill-name .fab.fa-js {
+    color: #F7DF1E;
+}
+
+.skill-name .fab.fa-java {
+    color: #E34F26;
+}
+
+.skill-name .fab.fa-python {
+    color: #3776AB;
+}
+
+.skill-name .fab.fa-react {
+    color: #61DAFB;
+}
+
+.skill-name .fas.fa-wind {
+    color: #06B6D4;
+}
+
+.skill-name .fab.fa-git-alt {
+    color: #F05032;
+}
+
+.skill-name .fab.fa-github {
+    color: #181717;
+}
+
+.skill-name .fas.fa-code {
+    color: #007ACC;
+}
+
+[data-theme="dark"] .skill-name .fab.fa-github {
+    color: #ffffff;
 }
 
 .skill-percentage {

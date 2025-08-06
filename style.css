@@ -752,6 +752,9 @@ body {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 0 15px rgba(96, 61, 244, 0.3);
 }
 
 .skill-item {

@@ -287,7 +287,7 @@ body {
     height: 23rem;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(96, 61, 244, 0.4);
+    border: 5px solid var(--secondary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

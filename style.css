@@ -532,7 +532,6 @@ body {
     border-radius: var(--border-radius);
     transition: var(--transition), transform 0.3s ease;
     box-shadow: var(--shadow);
-    /* border-right: 5px solid var(--primary-color); */
     border-bottom: 5px solid var(--primary-color);
 }
 
@@ -678,18 +677,26 @@ body {
 
 .project-image {
     position: relative;
-    height: 250px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    height: auto;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-top: 5px solid var(--primary-color);
+    border-radius: var(--border-radius);
 }
 
-.project-icon {
-    font-size: 4rem;
-    color: rgba(255, 255, 255, 0.7);
-    transition: var(--transition);
+.project-image img,
+.project-image .project-icon img {
+    position: absolute;
+    top: -3px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    max-height: 250px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .project-overlay {
@@ -704,14 +711,16 @@ body {
     justify-content: center;
     opacity: 0;
     transition: var(--transition);
+    backdrop-filter: blur(5px);
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
 }
 
-.project-card:hover .project-icon {
-    transform: scale(1.2);
+.project-card:hover .project-image img {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 .project-link-btn {

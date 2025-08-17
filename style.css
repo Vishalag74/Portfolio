@@ -532,6 +532,8 @@ body {
     border-radius: var(--border-radius);
     transition: var(--transition), transform 0.3s ease;
     box-shadow: var(--shadow);
+    /* border-right: 5px solid var(--primary-color); */
+    border-bottom: 5px solid var(--primary-color);
 }
 
 .stat-item:hover {
@@ -625,9 +627,9 @@ body {
 
 .project-card[data-visible="false"] {
     display: none;
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for smooth effects */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Add transition for smooth effects */
 }
-
 
 .show-more-container {
     text-align: center;
@@ -776,6 +778,7 @@ body {
     box-shadow: var(--shadow);
     transition: var(--transition);
     min-height: 300px;
+    border-left: 5px solid var(--primary-color);
 }
 
 .skill-category:hover {
@@ -994,6 +997,7 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border-top: 5px solid var(--primary-color);
 }
 
 .contact-item:hover {
@@ -1031,6 +1035,8 @@ body {
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    border-top: 5px solid var(--primary-color);
+
 }
 
 .form-group {
@@ -1255,7 +1261,7 @@ body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .skill-category {
         padding: 1.5rem;
         min-height: auto;

@@ -389,7 +389,13 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Project Card Hover Effects
+document.getElementById('show-more-btn').addEventListener('click', () => {
+    const hiddenProjects = document.querySelectorAll('.project-card[data-visible="false"]');
+    hiddenProjects.forEach(project => {
+        project.setAttribute('data-visible', 'true');
+    });
+});
+
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px) scale(1.02)';

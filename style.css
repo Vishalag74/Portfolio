@@ -623,6 +623,41 @@ body {
     gap: 2rem;
 }
 
+.project-card[data-visible="false"] {
+    display: none;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for smooth effects */
+}
+
+
+.show-more-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.show-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.show-more-btn.expanded i {
+    transform: rotate(180deg);
+}
+
+.show-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Animation for showing hidden projects */
+.project-card[data-visible="false"].show {
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
 .project-card {
     background: var(--card-bg);
     border-radius: var(--border-radius);
@@ -730,8 +765,8 @@ body {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
 .skill-category {
@@ -740,6 +775,7 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    min-height: 300px;
 }
 
 .skill-category:hover {
@@ -757,8 +793,14 @@ body {
     text-shadow: 0 0 15px rgba(96, 61, 244, 0.3);
 }
 
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .skill-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 .skill-info {
@@ -766,6 +808,92 @@ body {
     justify-content: space-between;
     margin-bottom: 0.5rem;
     align-items: center;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-name i {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.skill-name .fab.fa-html5 {
+    color: #E34F26;
+}
+
+.skill-name .fab.fa-css3-alt {
+    color: #1572B6;
+}
+
+.skill-name .fab.fa-js {
+    color: #F7DF1E;
+}
+
+.skill-name .fab.fa-java {
+    color: #E34F26;
+}
+
+.skill-name .fab.fa-python {
+    color: #3776AB;
+}
+
+.skill-name .fab.fa-react {
+    color: #61DAFB;
+}
+
+.skill-name .fas.fa-wind {
+    color: #06B6D4;
+}
+
+.skill-name .fas.fa-bolt {
+    color: #FF6B6B;
+}
+
+.skill-name .fab.fa-git-alt {
+    color: #F05032;
+}
+
+.skill-name .fab.fa-github {
+    color: #181717;
+}
+
+.skill-name .fas.fa-rocket {
+    color: #000000;
+}
+
+[data-theme="dark"] .skill-name .fab.fa-github {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .skill-name .fas.fa-rocket {
+    color: #ffffff;
+}
+
+.skill-percentage {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--light-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.5s ease-out;
 }
 
 .skill-name {
@@ -1127,6 +1255,12 @@ body {
 
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+        min-height: auto;
     }
 
     .projects-grid {

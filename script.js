@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initParticleBackground();
     // Ensure particle colors are updated on initial load based on theme
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
     updateParticleColors(currentTheme);
 });
 
 // Theme Toggle Functionality
 function initTheme() {
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Default to dark theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
     // Theme toggle event listener
@@ -487,7 +487,7 @@ function Particle(x, y, size, speedX, speedY, color) {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Wrap particles around edges
+        // wrap particles around edges
         if (this.x > canvas.width) this.x = 0;
         else if (this.x < 0) this.x = canvas.width;
 
@@ -571,3 +571,6 @@ function initParticleBackground() {
     animateParticles();
     window.addEventListener('resize', resizeCanvas);
 }
+
+// Initialize particle background
+initParticleBackground();

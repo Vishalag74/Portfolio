@@ -396,6 +396,13 @@ document.getElementById('show-more-btn').addEventListener('click', () => {
     });
 });
 
+document.getElementById('show-more-certificates-btn').addEventListener('click', () => {
+    const hiddenCertificates = document.querySelectorAll('.timeline-item[data-visible="false"]');
+    hiddenCertificates.forEach(certificate => {
+        certificate.setAttribute('data-visible', 'true');
+    });
+});
+
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px) scale(1.02)';

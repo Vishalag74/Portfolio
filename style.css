@@ -959,6 +959,11 @@ body {
     height: 2.5rem;
 }
 
+.firebase-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 
 .skill-content {
     flex: 1;
